@@ -6,11 +6,13 @@
     </head>
     <body>
         <h1>Chat</h1>
-        <p>Username:</p>
+        <div class="username">Username: <span id="username"></span></div>
 
         <div id="chatbox">
-
-            <div id="chatbubble"></div>
+            <div id="scroll">
+                <template id="hide"><div id="chatbubble"></div></template>
+            </div>
+            
 
             <div id="tools">
               <input id="message" type="text" placeholder="Type a message...">

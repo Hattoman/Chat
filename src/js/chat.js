@@ -1,12 +1,6 @@
 // TODO: En fungerande chat över en WebSocket uppkoppling som
 //       tillåter dig att skicka och ta emot meddelanden
 
-// TODO: Kunna välja ett användarnamn.
-
-// TODO: Strukturerade med HTML
-
-// TODO: Stilsatt med CSS
-
 // TODO: Interaktiv med JavaScript
 
 // TODO: Kunna skicka meddelanden både genom att trycka på en
