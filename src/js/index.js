@@ -26,18 +26,15 @@ connection.onmessage = message => {
     const chatMsg = obj.data.text;
     const time = new Date(obj.data.time).toString(); // set real-time numbers
     const username = obj.data.author;
+    const userColor = obj.data.color; // extact color ID from console to apply to user messages
 
     const container = document.getElementById('scroll');
     const template = document.getElementById('hide');
     const div = document.importNode(template.content.firstElementChild, true);
-    div.style = ' '; // använd css för att såtta färg
-    div.textContent = `${time.substr(17, 4) + username}: ${chatMsg}`;
+    div.style = `background-color: ${userColor}`; // to use variables inside a string use dollarsign and bracket around it
+    div.textContent = `${time.substr(17, 4) + username}:${chatMsg}`;
     container.appendChild(div);
-
-    // get from template and log out the chatbubble to chatbox so its visible
   }
-  // TODO: add if-sats to check which member is called before printing data type
-  // TODO: console log each member of "data" (time, author, color etc) separated
 };
 
 const btnSend = document.getElementById('button');

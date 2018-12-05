@@ -25,7 +25,7 @@ body {
   width: 80%;
   min-height: 50px;
   margin: 10px;
-  background-color: #797979;
+  background-color: #5f5f5f;
 }
 
 #scroll {
@@ -51,7 +51,7 @@ border: none;
 }
 
 #message:hover {
-  background-color: #464646;
+  background-color: #505050;
 }
 
 button {
