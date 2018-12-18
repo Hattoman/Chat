@@ -14,6 +14,28 @@ connection.onmessage = message => {
   console.log(obj);
   const input = document.getElementById('message');
 
+  if (obj.type == 'history') {
+    console.log(obj.data);
+    const history = obj.data;
+
+    // loop through each message using a FOR loop then print them out in chatbox
+    history.forEach(obj => {
+      console.log(obj);
+
+      const chatMsg = obj.text.toString();
+      const time = new Date(obj.time).toString();
+      const username = obj.author;
+      const userColor = obj.color;
+
+      const container = document.getElementById('scroll');
+      const template = document.getElementById('hide');
+      const div = document.importNode(template.content.firstElementChild, true);
+      div.style = `background-color: ${userColor}`; // to use variables inside a string use dollarsign and bracket around it
+      div.textContent = `${time.substr(16, 5) + username}:${chatMsg}`;
+      container.appendChild(div);
+    });
+  }
+
   if (obj.type == 'color') {
     const username = input.value;
 
@@ -32,7 +54,7 @@ connection.onmessage = message => {
     const template = document.getElementById('hide');
     const div = document.importNode(template.content.firstElementChild, true);
     div.style = `background-color: ${userColor}`; // to use variables inside a string use dollarsign and bracket around it
-    div.textContent = `${time.substr(17, 4) + username}:${chatMsg}`;
+    div.textContent = `${time.substr(16, 5) + username}:${chatMsg}`;
     container.appendChild(div);
   }
 };
